@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta meeta charset="UTF-8">
-        <meta meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link link rel="stylesheet" href="css/style.css">
-        <script script src="js/main.js" defer></script>
-        <title>Проверка надежности пароля</title>
-    </head>
-    <body>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/main.js" defer></script>
+    <title>Проверка надежности пароля</title>
+</head>
+<body>
+    <div class="m-1">
+        <h1>Проверка надежности пароля</h1>
+        <div class="in-gr">
+            <label for="pass">Ваш пароль</label>
+            <div class="pass-w">
+                <input type="password" id="pass" placeholder="Введите пароль">
+                <button class="t-pass" id="tpass">
+                    <i class="far fa-eye"></i>
+                </button>
+            </div>
+        </div>
+        <div class="s-m">
+            <div class="s-b" id="sb"></div>
+        </div>
+        <div class="s-t" id="st">Введите пароль для проверки</div>
+
+        <div class="r">
+            <div class="r-0" id="l-r">
+                <i class="far fa-circle"></i>
+                <span>Минимум 8 символов</span>
+            </div>
+            <div class="r-0" id="lr">
+                <i class="far fa-circle"></i>
+                <span>Строчные буквы (a-z)</span>
+            </div>
+            <div class="r-0" id="ur">
+                <i class="far fa-circle"></i>
+                <span>Заглавные буквы (A-Z)</span>
+            </div>
+            <div class="r-0" id="nr">
+                <i class="far fa-circle"></i>
+                <span>Цифры (0-9)</span>
+            </div>
+            <div class="r-0" id="sr">
+                <i class="far fa-circle"></i>
+                <span>Спецсимволы (!@#$)</span>
+            </div>
+        </div>
+        <div class="b-t">
+            <button class="g-btn" id="g-3">
+                <i class="fas fa-key"></i>
+                Сгенерировать
+            </button>
+            <button class="c-btn" id="cbtn">
+                <i class="far fa-copy"></i>
+                Копировать
+            </button>
+            <div class="too" id="too">Скопировано!</div>
+        </div>
+    </div>
+</body>
 </html>
