@@ -128,5 +128,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+    //4. Основной модуль 
+    // Генерация надежного пароля
+    function generateStrongPassword() {
+        const length = 12;
+        const lowercase = 'abcdefghjkmnpqrstuvwxyz';
+        const uppercase = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+        const numbers = '23456789';
+        const symbols = '!@#$%^&*';
+        
+        let charset = '';
+        let password = '';
+        
+        // Добавляем хотя бы по одному символу из каждой категории
+        password += getRandomChar(lowercase);
+        password += getRandomChar(uppercase);
+        password += getRandomChar(numbers);
+        password += getRandomChar(symbols);
+        
+        // Формируем полный набор символов
+        charset = lowercase + uppercase + numbers + symbols;
+        
+        // Добираем остаток пароля
+        for (let i = password.length; i < length; i++) {
+            password += getRandomChar(charset);
+        }
+        
+        // Перемешиваем символы
+        return shuffleString(password);
+    }
     
+    // Получение случайного символа из строки
+    function getRandomChar(string) {
+        const randomValues = new Uint32Array(1);
+        window.crypto.getRandomValues(randomValues);
+        return string[randomValues[0] % string.length];
+    }
+    
+    // Перемешивание строки
+    function shuffleString(string) {
+        const array = string.split('');
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array.join('');
+    }
 });
