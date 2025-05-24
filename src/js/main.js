@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+    
     //4. Основной модуль 
     // Генерация надежного пароля
     function generateStrongPassword() {
