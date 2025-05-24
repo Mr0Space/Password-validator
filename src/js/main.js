@@ -92,4 +92,41 @@ document.addEventListener('DOMContentLoaded', function() {
             checks
         };
     }
+
+    // 3. Модуль обновления интерфейса 
+    // Обновление индикатора сложности
+    function updateStrengthIndicator(strength) {
+        strengthBar.style.width = `${strength}%`;
+        
+        if (strength < 40) {
+            strengthBar.style.backgroundColor = 'var(--danger)';
+            strengthText.textContent = 'Слабый пароль';
+            strengthText.style.color = 'var(--danger)';
+        } else if (strength < 70) {
+            strengthBar.style.backgroundColor = 'var(--warning)';
+            strengthText.textContent = 'Средний пароль';
+            strengthText.style.color = 'var(--warning)';
+        } else {
+            strengthBar.style.backgroundColor = 'var(--success)';
+            strengthText.textContent = 'Надежный пароль';
+            strengthText.style.color = 'var(--success)';
+        }
+    }
+    
+    // Обновление отображения требований
+    function updateRequirements(checks) {
+        for (const [key, isValid] of Object.entries(checks)) {
+            const icon = requirements[key].querySelector('i');
+            if (isValid) {
+                icon.classList.remove('fa-circle', 'far');
+                icon.classList.add('fa-check', 'fas', 'valid');
+                requirements[key].style.color = 'var(--dark)';
+            } else {
+                icon.classList.remove('fa-check', 'fas', 'valid');
+                icon.classList.add('fa-circle', 'far');
+                requirements[key].style.color = '#858796';
+            }
+        }
+    }
+    
 });
