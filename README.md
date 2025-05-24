@@ -32,7 +32,7 @@
 3. Установка и запуск
 
 1. git clone https://github.com/Mr0Space/Password-validator.git
-2. cd password-checker
+2. cd Password-validator
 3. start index.html
 
 4. Использование
